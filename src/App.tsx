@@ -20,7 +20,7 @@ function App() {
         </a>
       </header>
 
-      <h1 className="text-3xl font-bold underline text-emerald-700">
+      <h1 className="text-3xl font-bold underline">
         Hello world!
       </h1>
     </div>

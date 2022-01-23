@@ -7,6 +7,7 @@
 :root {
   /* primary */
   --cyan: hsl(180, 66%, 49%);
+  --cyan-light: hsl(180, 66%, 70%);
   --dark-violet: hsl(257, 27%, 26%);
 
   /* secondary */
@@ -14,12 +15,74 @@
 
   /* neutral */
   --gray: hsl(0, 0%, 75%);
+  --gray-light: hsl(230, 25%, 95%);
   --grayish-violet: hsl(257, 7%, 63%);
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
+  --white: hsl(0, 100%, 100%);
+
+  --desktop-container: 1110px;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+}
+
+.url-shortener {
+  @apply flex flex-col md:flex-row gap-6 items-center bg-dark-violet py-9 px-6 md:py-[52px] md:px-16 rounded-lg absolute left-0 -top-20 w-full bg-cover;
+
+  background-image: url('assets/svg/bg-shorten-mobile.svg');
+}
+
+.boost-links {
+  @apply mx-auto text-center bg-dark-violet bg-cover py-20 md:py-14;
+
+  background-image: url('assets/svg/bg-boost-mobile.svg');
+}
+
+.card-stats {
+  @apply relative bg-white rounded-lg pl-8 pr-12 pt-20 pb-10;
+}
+
+.card-stats__icon {
+  @apply absolute md:left-8 -top-10 rounded-full bg-dark-violet p-6;
+
+  left: calc(50% - 44px);
+}
+
+.card-stats__separator {
+  @apply absolute -bottom-8 rotate-90 bg-cyan w-14 h-2;
+
+  left: calc(50% - 24px);
+}
+
+@screen md {
+  .url-shortener {
+    background-image: url('assets/svg/bg-shorten-desktop.svg');
+  }
+
+  .boost-links {
+    background-image: url('assets/svg/bg-boost-desktop.svg');
+  }
+}
+
+@screen lg {
+  .card-stats__icon {
+    @apply left-6;
+  }
+
+  .card-stats__separator {
+    @apply -right-14 rotate-0;
+    
+    left: inherit;
+  }
+
+  .card-stats-brand .card-stats__separator {
+    @apply bottom-16;
+  }
+
+  .card-stats-record .card-stats__separator {
+    bottom: calc(7rem + 8px);
+  }
 }
